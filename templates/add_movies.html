@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5">
+	<div class="container">
+		<h3>Add Movies</h3>
+		<form method="POST">
+			<div class="form-group">
+				<label>Movie Title</label>
+				<input type="text" name="title" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label>Genre</label>
+				<input type="text" name="genre" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label>Released Year</label>
+				<input type="text" name="year" class="form-control">
+			</div>
+			
+			<input type="submit" value="Submit">
+
+		</form>
+	</div>
+</section>
+
+
+
+{% endblock %}

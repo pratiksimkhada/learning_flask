@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<section class="py-5">
+  <div class="container">
+  	<table class="table">
+  		<thead>
+  			<tr>
+          <th> ID </th>
+  				<th> Movie Title </th>
+  				<th> Genre </th>
+  				<th> Released Year </th>
+          <th> Actions </th>
+
+  			</tr>
+  		</thead>
+  		<tbody>
+  			{% for item in rows %}
+  			<tr>
+          <td>{{ item["movie_id"] }}</td>
+  				<td>{{ item["title"] }}</td>
+  				<td>{{ item["genre"] }}</td>
+  				<td>{{ item["released_year"] }}</td>
+          <td>
+            <a href=" {{ url_for('edit_movies', movie_id = item["movie_id"]) }} "> Edit </a>
+            <a href="{{ url_for('delete_movie', movie_id = item["movie_id"]) }}"> Delete </a>
+          </td>
+
+  			</tr>
+  			{% endfor %}
+  		</tbody>
+  	</table>
+  </div>
+</section>
+
+{% endblock %}
